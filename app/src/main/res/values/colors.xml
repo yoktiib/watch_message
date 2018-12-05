@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="waffle_background_color">#f1f2f2</color>
+    <color name="waffle_white_color">#FFF</color>
+    <color name="waffle_yellow_01_color">#ffe357</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white_f0f1f1">#f0f1f1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_tran">#88FFFFFF</color>
+    <color name="yellow">#ffe33d</color>
+    <color name="black_light">#414042</color>
+    <color name="green_mint">#66bcc1</color>
+    <color name="pink">#e081ac</color>
+    <color name="orange">#f7941e</color>
+    <color name="orange_red">#f1675e</color>
+    <color name="dark_blue">#248eca</color>
+    <color name="gray">#e6e7e8</color>
+</resources>

@@ -1,0 +1,75 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TxtStyle_14sp_w">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TxtStyle_14sp_w_b">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TxtStyle_16sp_w">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TxtStyle_16sp_w_b">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TxtStyle_18sp_w_b">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black_light</item>
+    </style>
+
+    <style name="TxtStyle_20sp_w_b">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black_light</item>
+    </style>
+
+    <style name="TxtStyle_22sp_w_b">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black_light</item>
+    </style>
+
+    <style name="TxtStyle_24sp_w_b">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black_light</item>
+    </style>
+
+    <style name="TxtStyle_28sp_w_b">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black_light</item>
+    </style>
+
+    <style name="TxtStyle_36sp_w_b">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black_light</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+</resources>
