@@ -38,12 +38,6 @@ public class StickerMap {
             m.put("13", R.drawable.msg_st14);
             m.put("14", R.drawable.msg_st15);
             m.put("15", R.drawable.msg_st16);
-            m.put("16", R.drawable.msg_st17);
-            m.put("17", R.drawable.msg_st18);
-            m.put("18", R.drawable.msg_st19);
-            m.put("19", R.drawable.msg_st20);
-            m.put("20", R.drawable.msg_st21);
-            m.put("21", R.drawable.msg_st22);
             return m.get(id);
         }catch (NullPointerException e){
             e.printStackTrace();
