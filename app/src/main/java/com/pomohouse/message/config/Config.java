@@ -7,10 +7,10 @@ public class Config {
     //public static final String BASE_URL = "http://203.151.232.222:3000/v1.2/api/watch/";
     //public static final String BASE_URL = "http://api.pomowaffle.com/v1.2/api/watch/";
     //private var API_BASE_URL = "http://staging-translate.pomowaffle.com/api/"
-//    public static String API = "api.pomowaffle.com";
-//    public static final String BASE_URL = "https://" + API + "/v1.2/api/watch/";
+    public static String API = "api.pomowaffle.com";
+    public static final String BASE_URL = "https://" + API + "/v1.2/api/watch/";
 
-    public static final String BASE_URL = "http://13.228.58.26:3000/v1.1/api/watch/";
+    //public static final String BASE_URL = "http://13.228.58.26:3000/v1.1/api/watch/";
     //view contactType message
     public static final int TYPE_MY_VOICE = 0;
     public static final int TYPE_MY_STICKER = 1;

@@ -207,8 +207,9 @@ public class RecordVoiceDialogFragment extends DialogFragment {
     }
 
     private void initialRecorder() {
-        String pathFolder = Environment.getExternalStoragePublicDirectory(Environment
-                .DIRECTORY_DOWNLOADS) + File.separator;
+        String pathFolder = Environment.getExternalStorageDirectory().getAbsolutePath(); /*Environment.getExternalStoragePublicDirectory(Environment
+                .DIRECTORY_DOWNLOADS) + File.separator;*/
+
         tempFileName = DateTime.getDateTime() + ".mp3";
         recorder.reset();
         recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
