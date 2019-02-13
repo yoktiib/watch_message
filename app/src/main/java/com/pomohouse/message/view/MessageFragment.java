@@ -7,6 +7,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -132,6 +133,7 @@ public class MessageFragment extends AbstractFragment implements VoiceReceiveLis
         unsubscriptionInterval();
 
         messageAdapter.stopPlayVoice();
+        getActivity().finish();
     }
 
     @Override
@@ -172,12 +174,12 @@ public class MessageFragment extends AbstractFragment implements VoiceReceiveLis
                     .setPrettyPrinting().create().toJson(contactData));
         }
 
+        requestChatRoomData(contactData);
         sendMessage = new SendMessageController(getContext(), sendMessageListener);
         messagesDAO = new MessagesDAO();
         messageAdapter = new MessageAdapter(context);
         messageTimeInterval = ObjectDataInstance.getInstance().getApiLoopTime();
 
-        requestChatRoomData(contactData);
     }
 
     private void callApiLoop() {
@@ -230,7 +232,7 @@ public class MessageFragment extends AbstractFragment implements VoiceReceiveLis
         String myImei = ObjectDataInstance.getInstance().getMyImei();
         String memberId = m.getContactId();
 
-//        AbstractLog.w("RequestChatRoomData Param", "memberId " + memberId + "\n" + "imei " + myImei);
+        AbstractLog.w("RequestChatRoomData Param", "memberId " + memberId + "\n" + "imei " + myImei);
 
         Observable<Response<ChatRoomDAO>> observableChatRoom = service.getChatRoomList(myImei, memberId);
         subscriptionMessage = observableChatRoom.subscribeOn(Schedulers.io())
@@ -287,10 +289,10 @@ public class MessageFragment extends AbstractFragment implements VoiceReceiveLis
     }
 
     private void requestMessageList(int msgLastId, int roomId, String myImei) {
-//        AbstractLog.w("RequestMessage Param",
-//                "msgLastId " + msgLastId + "\n" +
-//                        "roomId " + roomId + "\n" +
-//                        "myImei " + myImei);
+        AbstractLog.w("RequestMessage Param",
+                "msgLastId " + msgLastId + "\n" +
+                        "roomId " + roomId + "\n" +
+                        "myImei " + myImei);
 
         Observable<Response<MessagesDAO>> observableMessage = service.getMessageList(msgLastId, roomId, myImei);
         subscriptionMessage = observableMessage.subscribeOn(Schedulers.io())
@@ -334,12 +336,13 @@ public class MessageFragment extends AbstractFragment implements VoiceReceiveLis
         RealmManage manage = new RealmManage(context, new RealmManage.RealmAddDataListener() {
             @Override
             public void onSuccess() {
+                AbstractLog.w(TAG , " saveMessageToDatabase  onSuccess");
                 initialUpdateViewMessage();
             }
 
             @Override
             public void onError(Throwable error) {
-
+                AbstractLog.w(TAG , " saveMessageToDatabase  error :"+error);
             }
         });
         manage.addMessageToDatabase(initialMessagesDAO(dao));
@@ -369,11 +372,18 @@ public class MessageFragment extends AbstractFragment implements VoiceReceiveLis
     private int getLastMessageID() {
         int lastMessageID = 0;
         try {
+            /*AbstractLog.w(TAG , " Find All Message : "+Realm.getDefaultInstance().where(MessagesData.class)
+                    *//*.equalTo("chatRoomId", chatRoomDAO.getData().getChatRoomId())*//*
+                    .findAll().size());*/
+
             lastMessageID = Realm.getDefaultInstance().where(MessagesData.class)
                     .equalTo("chatRoomId", chatRoomDAO.getData().getChatRoomId())
                     .findAll()
                     .last()
                     .getMessageId();
+
+
+
             return lastMessageID;
         } catch (IOException e) {
             return lastMessageID;

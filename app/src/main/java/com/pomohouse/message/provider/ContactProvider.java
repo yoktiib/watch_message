@@ -60,6 +60,8 @@ public class ContactProvider {
                     if (listener != null)
                         listener.success(contactDAO);
 
+                } catch (RuntimeException re) {
+                    listener.error(re);
                 } catch (Exception e) {
                     listener.error(e);
                 }

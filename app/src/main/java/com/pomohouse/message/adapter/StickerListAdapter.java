@@ -47,7 +47,7 @@ public class StickerListAdapter extends RecyclerView.Adapter<StickerListAdapter.
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         StickerData data = stickerDAO.getStickerData().get(position);
-
+        //Glide.with(context).load(data.getStickerImg()).asBitmap().into(holder.ivSticker);
         holder.ivSticker.setImageResource(data.getStickerImg());
 
         if (onItemTouchListener != null) {

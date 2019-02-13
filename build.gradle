@@ -11,7 +11,7 @@ buildscript {
         /*classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'*/
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual pomo.waffle.personchat.module build.gradle files
-        classpath "io.realm:realm-gradle-plugin:3.5.0"
+        classpath "io.realm:realm-gradle-plugin:5.7.0"
     }
 }
 

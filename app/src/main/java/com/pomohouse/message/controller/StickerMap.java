@@ -49,7 +49,7 @@ public class StickerMap {
         StickerDAO dao = new StickerDAO();
         List<StickerData> data = new ArrayList<StickerData>();
         StickerData d;
-        for (int i = 0; i <= 21; i++) {
+        for (int i = 0; i <= 15; i++) {
             d = new StickerData();
             d.setId(i);
             d.setStickerImg(getStickerImg(i+""));
